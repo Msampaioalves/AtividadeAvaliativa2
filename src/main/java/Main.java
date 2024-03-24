@@ -1,14 +1,22 @@
-// import static org.junit.jupiter.api.Assertions.assertEquals;
-
-// import org.junit.jupiter.api.Test;
+import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-    System.out.println("Hello world!");
-  }
+    Scanner scanner = new Scanner(System.in);
+    String nomeUsuario, senha;
 
-  // @Test
-  // void addition() {
-  //     assertEquals(2, 1 + 1);
-  // }
+    do {
+      System.out.print("Digite o nome de usuário: ");
+      nomeUsuario = scanner.nextLine();
+
+      System.out.print("Digite a senha: ");
+      senha = scanner.nextLine();
+
+      if (senha.equals(nomeUsuario)) {
+        System.out.println("Erro: A senha não pode ser igual ao nome de usuário. Tente novamente.");
+      }
+    } while (senha.equals(nomeUsuario));
+
+    System.out.println("Usuário cadastrado com sucesso!");
+  }
 }
